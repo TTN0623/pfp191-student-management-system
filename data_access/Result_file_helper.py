@@ -2,7 +2,7 @@
 # VI: Lớp file helper: file này là nơi duy nhất đọc và ghi results_data.txt.
 # VI: Chứa FileIOException (lỗi đọc ghi file) và class ResultFileHelper (save, load).
 # VI: Dùng class Result để dựng đối tượng; Result_manager.py gọi ResultFileHelper.
-from Result import Result
+from models.Result import Result
 
 
 # VI: Exception riêng báo lỗi không đọc hoặc không ghi được file dữ liệu.

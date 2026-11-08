@@ -2,7 +2,7 @@
 # VI: Thuộc lớp Entity (đối tượng dữ liệu) trong mô hình.
 # VI: Chứa class Student, kế thừa Person, thêm mã SV, lớp, trạng thái học.
 # VI: Được dùng bởi Student_manager, Student_io và Student_file_helper.
-from Person import Person  # Import the Person class
+from models.Person import Person  # Import the Person class
 
 # VI: Một sinh viên. Kế thừa thông tin cá nhân từ Person, thêm mã SV, tên lớp, trạng thái học.
 class Student(Person):
@@ -94,10 +94,16 @@ class Student(Person):
                 f"{self.class_name}|{self.phone}|{self.email}|{self.status}")
     #End def
 
-    # VI: In một dòng bảng sinh viên ra màn hình. Dấu :<8, :<22... là căn lề trái theo độ rộng cột.
+    # VI: Ghi đè Person.__str__: trả về một dòng bảng sinh viên. Dấu :<8, :<22... là căn lề trái theo độ rộng cột.
+    def __str__(self) -> str:
+        """Overrides Person.__str__(). Returns one row of the student table."""
+        return (f"| {self.student_id:<8} | {self.full_name:<22} | {self.date_of_birth:<10} | "
+                f"{self.gender:<6} | {self.class_name:<8} | {self.phone:<11} | {self.email:<26} | {self.status:<9} |")
+    #End def
+
+    # VI: In một dòng bảng sinh viên ra màn hình, dùng __str__ ở trên.
     def print_info(self):
         """Prints one row of the student table."""
-        print(f"| {self.student_id:<8} | {self.full_name:<22} | {self.date_of_birth:<10} | "
-              f"{self.gender:<6} | {self.class_name:<8} | {self.phone:<11} | {self.email:<26} | {self.status:<9} |")
+        print(self)
     #End def
 #End class

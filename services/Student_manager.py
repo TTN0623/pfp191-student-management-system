@@ -3,8 +3,8 @@
 # VI: Chứa StudentManagerException và StudentManager (thêm, sửa, xóa, tìm, lọc, sắp xếp, đếm).
 # VI: Dùng Student (entity) và StudentFileHelper (đọc ghi file); không tự in hay tự nhập.
 # VI: Được Main.py gọi, kết hợp với StudentConsoleIO để giao tiếp người dùng.
-from Student import Student
-from Student_file_helper import StudentFileHelper
+from models.Student import Student
+from data_access.Student_file_helper import StudentFileHelper
 
 
 # VI: Exception riêng của manager. Được ném khi vi phạm luật, ví dụ trùng mã hoặc không tìm thấy sinh viên.

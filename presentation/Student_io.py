@@ -3,8 +3,8 @@
 # VI: Chứa class StudentConsoleIO: in menu, đọc và kiểm tra từng ô nhập, in bảng sinh viên.
 # VI: Không chứa luật nghiệp vụ và không đọc ghi file.
 # VI: Được Main.py (menu chính) gọi tới; kiểm tra dữ liệu nhờ StudentValidator.
-from Student import Student
-from Student_validator import StudentValidator
+from models.Student import Student
+from utils.Student_validator import StudentValidator
 
 
 # VI: Class lo toàn bộ việc nhập và xuất cho sinh viên. Dữ liệu hợp lệ mới được trả ra ngoài.

@@ -168,12 +168,24 @@ class Result:
                 f"{self.credits}|{text_fe}|{text_re}")
     #End def
 
-    # VI: In một dòng của bảng kết quả. Họ tên không nằm trong Result nên được truyền vào (mặc định rỗng). Điểm None in dấu -.
-    def print_info(self, full_name: str = ""):
-        """Prints one row of the result table."""
+    # VI: Tạo một dòng của bảng kết quả. Họ tên không nằm trong Result nên được truyền vào (mặc định rỗng). Điểm None in dấu -.
+    def format_row(self, full_name: str = "") -> str:
+        """Returns one row of the result table."""
         text_fe = "-" if self._grade_fe is None else f"{self._grade_fe:.1f}"
         text_re = "-" if self._grade_re is None else f"{self._grade_re:.1f}"
-        print(f"| {self.student_id:<8} | {full_name:<22} | {self.course_id:<8} | {self.course_name:<38} | "
-              f"{self.semester:<8} | {self.credits:>7} | {text_fe:>4} | {text_re:>4} | {self.status:<10} |")
+        return (f"| {self.student_id:<8} | {full_name:<22} | {self.course_id:<8} | {self.course_name:<38} | "
+                f"{self.semester:<8} | {self.credits:>7} | {text_fe:>4} | {text_re:>4} | {self.status:<10} |")
+    #End def
+
+    # VI: __str__ được gọi khi print(result) hoặc str(result): một dòng bảng, cột họ tên để trống.
+    def __str__(self) -> str:
+        """Readable one-line text, used by print() and str()."""
+        return self.format_row()
+    #End def
+
+    # VI: In một dòng của bảng kết quả kèm họ tên sinh viên.
+    def print_info(self, full_name: str = ""):
+        """Prints one row of the result table."""
+        print(self.format_row(full_name))
     #End def
 #End class

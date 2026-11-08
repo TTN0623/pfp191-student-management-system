@@ -7,14 +7,14 @@
 import os
 import unittest
 
-from Student import Student
-from Result import Result
-from Student_validator import StudentValidator
-from Result_validator import ResultValidator
-from Student_manager import StudentManager, StudentManagerException
-from Result_manager import ResultManager, ResultManagerException
-from Student_file_helper import StudentFileHelper
-from Result_file_helper import ResultFileHelper
+from models.Student import Student
+from models.Result import Result
+from utils.Student_validator import StudentValidator
+from utils.Result_validator import ResultValidator
+from services.Student_manager import StudentManager, StudentManagerException
+from services.Result_manager import ResultManager, ResultManagerException
+from data_access.Student_file_helper import StudentFileHelper
+from data_access.Result_file_helper import ResultFileHelper
 
 
 # VI: Hàm trợ giúp: tạo nhanh một Student mẫu, có thể đổi mã, lớp và trạng thái. Trả về đối tượng Student.
@@ -70,6 +70,13 @@ class TestStudent(unittest.TestCase):
     def test_to_file_string_has_eight_fields(self):
         self.assertEqual(len(make_student().to_file_string().split("|")), 8)
     #End def
+
+    # VI: str(student) gọi __str__ của Student (ghi đè Person), trả về một dòng có mã SV và trạng thái.
+    def test_str_shows_id_and_status(self):
+        text = str(make_student())
+        self.assertIn("SE00001", text)
+        self.assertIn("Active", text)
+    #End def
 #End class
 
 
@@ -113,6 +120,14 @@ class TestResult(unittest.TestCase):
     def test_get_best_grade(self):
         result = Result("SE00001", "PFP191", "Python", "FA26", 3, 4.0, 6.5)
         self.assertEqual(result.get_best_grade(), 6.5)
+    #End def
+
+    # VI: str(result) gọi __str__ của Result: điểm chưa thi in dấu -, có trạng thái.
+    def test_str_shows_status_and_empty_grade(self):
+        text = str(Result("SE00001", "PFP191", "Python", "FA26", 3, 8.5, None))
+        self.assertIn("PFP191", text)
+        self.assertIn("Pass", text)
+        self.assertIn("-", text)
     #End def
 
     # VI: Gán điểm lớn hơn 10 phải ném ValueError.

@@ -2,8 +2,8 @@
 # VI: Lớp giao diện (IO): file này nói chuyện với người dùng qua console, không chứa luật nghiệp vụ và không đọc ghi file.
 # VI: Chứa class ResultConsoleIO: in menu, đọc từng trường nhập vào, in bảng kết quả.
 # VI: Dùng ResultValidator để kiểm tra dữ liệu, tạo đối tượng Result; Main.py gọi class này.
-from Result import Result
-from Result_validator import ResultValidator
+from models.Result import Result
+from utils.Result_validator import ResultValidator
 
 
 # VI: Class giao diện cho phần kết quả học tập: mọi lệnh print và input của phần Result nằm ở đây.

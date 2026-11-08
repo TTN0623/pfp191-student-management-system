@@ -7,12 +7,12 @@
 # every print lives in the console IO classes, every file access lives in
 # the file helper classes.
 
-from Student_manager import StudentManager, StudentManagerException
-from Student_io import StudentConsoleIO
-from Student_file_helper import FileIOException as StudentFileIOException
-from Result_manager import ResultManager, ResultManagerException
-from Result_io import ResultConsoleIO
-from Result_file_helper import FileIOException as ResultFileIOException
+from services.Student_manager import StudentManager, StudentManagerException
+from presentation.Student_io import StudentConsoleIO
+from data_access.Student_file_helper import FileIOException as StudentFileIOException
+from services.Result_manager import ResultManager, ResultManagerException
+from presentation.Result_io import ResultConsoleIO
+from data_access.Result_file_helper import FileIOException as ResultFileIOException
 
 
 # VI: In menu chính (quản lý sinh viên, quản lý kết quả, lưu, thoát).

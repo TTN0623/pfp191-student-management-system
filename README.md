@@ -10,18 +10,22 @@ Python 3.10 or newer, standard library only.
 
 ```
 python3 Main.py          # start the program
-python3 Test_system.py   # run the 47 unit tests
+python3 Test_system.py   # run the 49 unit tests
 ```
 
 ## Files
 
-| Layer | Files |
-|---|---|
-| Console IO | Main.py, Student_io.py, Result_io.py |
-| Manager and validator | Student_manager.py, Result_manager.py, Student_validator.py, Result_validator.py |
-| File helper | Student_file_helper.py, Result_file_helper.py |
-| Entity | Person.py, Student.py, Result.py |
-| Tests | Test_system.py (uses the _test_data folder, never the real data files) |
-| Data | students_data.txt, results_data.txt (fields separated by the \| sign) |
+The code follows three layers and is split into five packages, one class per file.
+
+| Package | Layer | Files |
+|---|---|---|
+| (top of the folder) | Console IO, tests | Main.py, Test_system.py |
+| presentation/ | Console IO | Student_io.py, Result_io.py |
+| services/ | Manager | Student_manager.py, Result_manager.py |
+| utils/ | Validator | Student_validator.py, Result_validator.py |
+| data_access/ | File helper | Student_file_helper.py, Result_file_helper.py |
+| models/ | Entity | Person.py, Student.py, Result.py |
+
+Test_system.py uses the _test_data folder, never the real data files. The data files students_data.txt and results_data.txt separate fields with the \| sign.
 
 A result is Pass when the final exam grade is 5 or more, or when it is below 5 and the re-exam grade is 5 or more.

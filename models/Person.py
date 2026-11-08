@@ -105,4 +105,10 @@ class Person:
         """
         return f"{self.full_name}|{self.date_of_birth}|{self.gender}|{self.phone}|{self.email}"
     #End def
+
+    # VI: __str__ được gọi khi print(person) hoặc str(person): trả về một dòng dễ đọc.
+    def __str__(self) -> str:
+        """Readable one-line text, used by print() and str()."""
+        return f"{self.full_name} ({self.date_of_birth}, {self.gender}, {self.phone}, {self.email})"
+    #End def
 #End class

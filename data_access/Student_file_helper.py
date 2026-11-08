@@ -2,7 +2,7 @@
 # VI: Thuộc lớp File helper: nơi duy nhất đọc và ghi students_data.txt.
 # VI: Chứa FileIOException và StudentFileHelper.
 # VI: Student_manager gọi save() và load() của file này.
-from Student import Student
+from models.Student import Student
 
 
 # VI: Exception riêng của chương trình, dùng khi đọc hoặc ghi file bị lỗi hệ thống (OSError).

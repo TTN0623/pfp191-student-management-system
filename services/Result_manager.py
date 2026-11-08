@@ -2,8 +2,8 @@
 # VI: Lớp manager: file này giữ danh sách kết quả trong bộ nhớ và chạy các luật nghiệp vụ (thêm, sửa, xóa, tìm, GPA, sắp xếp).
 # VI: Chứa ResultManagerException và class ResultManager.
 # VI: Dùng Result và ResultFileHelper; Main.py gọi ResultManager, không đụng file trực tiếp.
-from Result import Result
-from Result_file_helper import ResultFileHelper
+from models.Result import Result
+from data_access.Result_file_helper import ResultFileHelper
 
 
 # VI: Exception riêng báo vi phạm luật nghiệp vụ, ví dụ thêm trùng hoặc sửa kết quả không tồn tại.
