@@ -1,0 +1,2 @@
+SE00001|Nguyen Van A|15/03/2005|Male|IA2102|0901234567|a.nguyen@fpt.edu.vn|Active
+SE00002|Nguyen Van A|15/03/2005|Male|IA2102|0901234567|a.nguyen@fpt.edu.vn|Active

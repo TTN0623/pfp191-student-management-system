@@ -1,0 +1,8 @@
+SE00001|PFP191|Programming Fundamentals with Python|FA26|3|8.5|
+SE00001|MAE101|Mathematics for Engineering|FA26|3|7.0|
+SE00001|SSL101|Academic Skills for University Success|FA26|3|4.0|6.5
+SE00002|PFP191|Programming Fundamentals with Python|FA26|3|9.0|
+SE00002|MAE101|Mathematics for Engineering|FA26|3|6.5|
+SE00003|PFP191|Programming Fundamentals with Python|FA26|3|3.5|4.0
+SE00004|PFP191|Programming Fundamentals with Python|FA26|3||
+SE00005|CSI104|Introduction to Computer Science|SP26|3|8.0|

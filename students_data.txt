@@ -1,0 +1,5 @@
+SE00001|Nguyen Trong Tai|15/03/2005|Male|IA2102|0901234567|tai.nguyen@fpt.edu.vn|Active
+SE00002|Tran Minh Anh|22/07/2005|Female|IA2102|0912345678|anh.tran@fpt.edu.vn|Active
+SE00003|Le Hoang Nam|08/11/2004|Male|IA2103|0923456789|nam.le@fpt.edu.vn|Inactive
+SE00004|Pham Thu Ha|30/01/2005|Female|IA2102|0934567890|ha.pham@fpt.edu.vn|Active
+SE00005|Vo Quoc Khanh|12/09/2003|Male|IA2101|0945678901|khanh.vo@fpt.edu.vn|Graduated
