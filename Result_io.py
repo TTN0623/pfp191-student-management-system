@@ -75,7 +75,7 @@ class ResultConsoleIO:
         """Keeps asking until the number of credits runs from 1 to 4."""
         while True:
             value = input("Credits (1 to 4): ").strip()
-            if value.isdigit() and self._validator.is_valid_credits(int(value)):
+            if value.isascii() and value.isdigit() and self._validator.is_valid_credits(int(value)):
                 return int(value)
             #End if
             print("Please type a number from 1 to 4.")
@@ -113,7 +113,8 @@ class ResultConsoleIO:
         """Keeps asking until the user types a number inside the menu range."""
         while True:
             value = input("Your choice: ").strip()
-            if value.isdigit() and min_choice <= int(value) <= max_choice:
+            # VI: Chỉ nhận chữ số 0 đến 9. Thiếu isascii() thì '²' lọt qua isdigit() rồi làm int() ném ValueError.
+            if value.isascii() and value.isdigit() and min_choice <= int(value) <= max_choice:
                 return int(value)
             #End if
             print("Please type a number from " + str(min_choice) + " to " + str(max_choice) + ".")

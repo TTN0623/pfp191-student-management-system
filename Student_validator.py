@@ -28,7 +28,7 @@ class StudentValidator:
         if student_id[:2] != "SE":
             return False
         #End if
-        return student_id[2:].isdigit()
+        return student_id[2:].isascii() and student_id[2:].isdigit()
     #End def
 
     # VI: Tên lớp hợp lệ: không rỗng, chỉ gồm chữ và số.
@@ -58,7 +58,8 @@ class StudentValidator:
         if len(text_day) != 2 or len(text_month) != 2 or len(text_year) != 4:
             return False
         #End if
-        if not (text_day.isdigit() and text_month.isdigit() and text_year.isdigit()):
+        text_all = text_day + text_month + text_year
+        if not (text_all.isascii() and text_day.isdigit() and text_month.isdigit() and text_year.isdigit()):
             return False
         #End if
 
@@ -96,7 +97,13 @@ class StudentValidator:
         if phone[0] != "0":
             return False
         #End if
-        return phone.isdigit()
+        # VI: Duyệt từng ký tự, chỉ chấp nhận '0' đến '9'. Không dùng isdigit() vì nó nhận cả chữ số Unicode như '²'.
+        for character in phone:
+            if character not in "0123456789":
+                return False
+            #End if
+        #End for
+        return True
     #End def
 
     # VI: Email hợp lệ: đúng một dấu @, không có khoảng trắng, phần tên không rỗng, phần domain có dấu chấm.

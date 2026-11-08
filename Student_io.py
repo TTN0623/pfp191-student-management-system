@@ -148,8 +148,8 @@ class StudentConsoleIO:
         """Keeps asking until the user types a number inside the menu range."""
         while True:
             value = input("Your choice: ").strip()
-            # VI: isdigit chặn chữ và số âm trước khi đổi sang int, nên không bị lỗi ValueError.
-            if value.isdigit() and min_choice <= int(value) <= max_choice:
+            # VI: isascii() và isdigit() cùng đúng thì chuỗi chỉ gồm chữ số 0 đến 9. Ký tự như '²' hay '-' bị chặn trước khi gọi int(), nên không có ValueError.
+            if value.isascii() and value.isdigit() and min_choice <= int(value) <= max_choice:
                 return int(value)
             #End if
             print("Please type a number from " + str(min_choice) + " to " + str(max_choice) + ".")

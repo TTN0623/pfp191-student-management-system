@@ -47,7 +47,7 @@ class ResultValidator:
         if len(semester) != 4:
             return False
         #End if
-        return semester[:2].isalpha() and semester[2:].isdigit()
+        return semester[:2].isalpha() and semester[2:].isascii() and semester[2:].isdigit()
     #End def
 
     # VI: Số tín chỉ hợp lệ khi nằm trong CREDITS_TUPLE (1 đến 4).
